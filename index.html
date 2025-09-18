@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Andréanne Fournier</title>
     <link rel="stylesheet" href="styles.css" />
-    <link rel="script" href="script.js" />
+    <script src="script.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
         integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -14,18 +14,26 @@
 </head>
 
 <body>
+    <div id="mySidenav" class="sidenav">
+        <a href="#about">À propos</a>
+        <a href="#experience">Expérience professionnelle</a>
+        <a href="#education">Éducation</a>
+        <a href="#skills">Compétences techniques</a>
+        <a href="#projects">Projets</a>
+    </div>
     <header>
         <nav>
+            <!--TODO: ADD REF -->
             <a href="/" class="button-icon"><i class="fa-solid fa-house"></i></a>
             <div>
-                <button class="button-icon"><i class="fa-solid fa-moon"></i></button>
-                <button class="button-icon"><i class="fa-solid fa-bars"></i></button>
+                <button class="button-icon" id="theme-toggle"><i class="fa-solid fa-circle-half-stroke"></i></button>
+                <button class="button-icon" id="hamburger" onclick="openCloseNav()"><i class="fa-solid fa-bars"></i></button>
             </div>
         </nav>
     </header>
     <main>
         <!-- Hero -->
-        <section>
+        <section id="about">
             <div class="hero-grid">
                 <div class="description-container">
                     <h1>Bonjour! Je m'appelle Andréanne👋</h1>
@@ -42,11 +50,12 @@
                     </div>
                     <div>
                         <div class="action-button-container">
-                            <a href="mailto:fournier_andreanne@yahoo.ca" class="action-button">
+                            <a href="mailto:fournier_andreanne@yahoo.ca" class="action-button"
+                                aria-label="Envoyer un courriel à Andréanne Fournier">
                                 Me contacter
                                 <i class="fa-solid fa-paper-plane"></i>
                             </a>
-                            <a href="cv.pdf" class="action-button" download>
+                            <a href="/public/CV portfolio - Andréanne Fournier 2025.pdf" class="action-button" download>
                                 Télécharger mon CV
                                 <i class="fa-solid fa-file-arrow-down"></i>
                             </a>
@@ -68,7 +77,7 @@
         </section>
 
         <!-- Professional Experience -->
-        <section>
+        <section id="experience">
             <h2>Expérience professionnelle</h2>
             <div class="experience-grid">
                 <div class="experience-container">
@@ -111,7 +120,7 @@
 
         <div class="education-skills-grid">
             <!-- Education -->
-            <section>
+            <section id="education">
                 <h2>Éducation</h2>
                 <div class="education-container">
                     <div class="timeline">
@@ -139,7 +148,7 @@
             </section>
 
             <!-- Skills -->
-            <section>
+            <section id="skills">
                 <h2>Compétences techniques</h2>
                 <div class="skill-container">
                     <button class="accordion">
@@ -253,7 +262,7 @@
         </div>
 
         <!-- Projects -->
-        <section>
+        <section id="projects">
             <h2>Projets personnels</h2>
             <div class="cards-grid">
                 <div class="project-card">
@@ -283,7 +292,8 @@
                             <a title="Démo" target="_blank" href="https://fun-todo-alpha.vercel.app">
                                 <i class="fa-solid fa-arrow-up-right-from-square link-icon"></i>
                             </a>
-                            <a title="GitHub" target="_blank" href="https://github.com/FournierAnd/fun-todo"><i class="fa-brands fa-github link-icon"></i></a>
+                            <a title="GitHub" target="_blank" href="https://github.com/FournierAnd/fun-todo"><i
+                                    class="fa-brands fa-github link-icon"></i></a>
                         </div>
                     </div>
                     <div class="img-div">
@@ -331,7 +341,7 @@
         </section>
     </main>
     <footer>
-        © 2025 Andréanne Fournier | Tous droits réservés
+        <span>© <span id="year"></span> Andréanne Fournier | Tous droits réservés</span>
     </footer>
 </body>
 

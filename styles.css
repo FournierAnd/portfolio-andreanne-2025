@@ -5,11 +5,14 @@
     --background-secondary: #ff6382;
     --background-highlight: #fff;
     --background-contrast: #63afff;
+    --background-skill-card: #fff;
+    --color-skill-card: #000;
     --color-primary: #000;
     --color-secondary: #fff;
     --background-transparent: rgb(255, 99, 130, 0.3);
     --background-contrast-transparent: rgb(99, 175, 255, 0.3);
     --border-light-grey: #c4c4c4;
+
     --border-radius-small: 4px;
     --border-radius-medium: 8px;
     --border-radius-large: 12px;
@@ -18,7 +21,12 @@
     --box-shadow-color: rgb(255, 99, 130, 0.3);
 }
 
-/*rgba(0, 0, 0, 0.1);*/
+.dark {
+    --background-primary: #424242;
+    --background-highlight: #5C5C5C;
+    --background-skill-card: #fce7e9;
+    --color-primary: #FEF4F5;
+}
 
 /*GENERAL*/
 
@@ -105,6 +113,33 @@ nav {
     z-index: 1000;
 }
 
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 4rem;
+    right: 0;
+    background-color: var(--background-primary);
+    overflow-x: hidden;
+    transition: width 0.3s ease;
+    padding-top: 60px;
+    box-shadow: -4px 0px 10px var(--box-shadow-color);
+    z-index: 100;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: var(--color-primary);
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: var(--background-secondary);
+}
+
 .button-icon {
     display: inline-flex;
     align-items: center;
@@ -115,7 +150,6 @@ nav {
     color: var(--color-primary);
     border: 1px solid var(--background-secondary);
     border-radius: 50%;
-    /* always circular */
     box-shadow: -1px 5px 3px var(--box-shadow-color);
     transition: 200ms;
     text-decoration: none;
@@ -125,6 +159,11 @@ nav {
 .button-icon:hover {
     box-shadow: 0 0 0 0 var(--background-secondary);
     transform: translate(2px, 2px);
+    color: var(--background-highlight);
+}
+
+/* Hamburger icon active state */
+.button-icon.active i {
     color: var(--background-highlight);
 }
 
@@ -382,7 +421,9 @@ ul.custom-bullets.internships li::before {
 .accordion {
     cursor: pointer;
     padding: 1rem;
+    margin-bottom: 1rem;
     width: 100%;
+    color: var(--color-primary);
     background: var(--background-highlight);
     border: 1px solid var(--background-secondary);
     border-radius: var(--border-radius-large);
@@ -390,6 +431,14 @@ ul.custom-bullets.internships li::before {
     justify-content: space-between;
     align-items: center;
     box-shadow: -1px 0px 3px var(--box-shadow-color);
+}
+
+.accordion:hover {
+    color: var(--background-secondary);
+}
+
+.accordion.active {
+    margin-bottom: 0;
 }
 
 .accordion-left {
@@ -405,7 +454,7 @@ ul.custom-bullets.internships li::before {
 }
 
 .panel {
-    display: flex;
+    display: none;
     flex-direction: row;
     flex-wrap: wrap;
     padding: 0.5rem;
@@ -419,6 +468,10 @@ ul.custom-bullets.internships li::before {
     box-shadow: -1px 5px 3px var(--box-shadow-color);
 }
 
+.panel.open {
+    display: flex;
+}
+
 .skill-card {
     max-width: 117px;
     min-width: 110px;
@@ -426,7 +479,8 @@ ul.custom-bullets.internships li::before {
     flex-direction: column;
     align-items: start;
     justify-content: center;
-    background: var(--background-highlight);
+    color: var(--color-skill-card);
+    background: var(--background-skill-card);
     border: 1px solid var(--border-light-grey);
     border-radius: var(--border-radius-large);
     padding: 0.5rem;
@@ -486,8 +540,8 @@ ul.custom-bullets.internships li::before {
 /*PROJECTS*/
 
 .cards-grid {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 2rem;
     padding-top: 1rem;
 }
