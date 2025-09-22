@@ -8,6 +8,7 @@ Built with HTML, CSS, and JavaScript.
 ---
 
 ## ✨ Features
+- 🌎 Supports French and English
 - 🌓 A light and dark theme
 - 📱 Responsive design
 

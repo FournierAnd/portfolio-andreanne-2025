@@ -15,16 +15,17 @@
 
 <body>
     <div id="mySidenav" class="sidenav">
-        <a href="#about">À propos</a>
-        <a href="#experience">Expérience professionnelle</a>
-        <a href="#education">Éducation</a>
-        <a href="#skills">Compétences techniques</a>
-        <a href="#projects">Projets</a>
+        <a href="#about" data-i18n="nav-about">À propos</a>
+        <a href="#experience" data-i18n="nav-experience">Expérience professionnelle</a>
+        <a href="#education" data-i18n="nav-education">Éducation</a>
+        <a href="#skills" data-i18n="nav-skills">Compétences techniques</a>
+        <a href="#projects" data-i18n="nav-projects">Projets</a>
     </div>
     <header>
-        <nav>            
+        <nav>
             <a href="https://andreannefournier.netlify.app" class="button-icon"><i class="fa-solid fa-house"></i></a>
             <div>
+                <button class="button-icon lang-btn" onclick="switchLanguage()">EN</button>
                 <button class="button-icon" id="theme-toggle"><i class="fa-solid fa-circle-half-stroke"></i></button>
                 <button class="button-icon" id="hamburger" onclick="openCloseNav()"><i
                         class="fa-solid fa-bars"></i></button>
@@ -36,10 +37,10 @@
         <section id="about">
             <div class="hero-grid">
                 <div class="description-container">
-                    <h1>Bonjour! Je m'appelle Andréanne👋</h1>
-                    <h2 class="job-title">Développeuse Web</h2>
+                    <h1 data-i18n="welcome">Bonjour! Je m'appelle Andréanne👋</h1>
+                    <h2 class="job-title" data-i18n="title">Développeuse Web</h2>
                     <div class="description">
-                        <p>
+                        <p data-i18n="description">
                             Développeuse d'applications Web passionnée, je me démarque par mon intérêt marqué pour le
                             front-end,
                             où je peux allier logique, interactivité, performance et design. Toujours en quête de
@@ -51,11 +52,12 @@
                     <div>
                         <div class="action-button-container">
                             <a href="mailto:fournier_andreanne@yahoo.ca" class="action-button"
-                                aria-label="Envoyer un courriel à Andréanne Fournier">
+                                aria-label="Envoyer un courriel à Andréanne Fournier" data-i18n="email-me">
                                 Me contacter
                                 <i class="fa-solid fa-paper-plane"></i>
                             </a>
-                            <a href="/public/cv-andreanne-fournier-portfolio-09-2025.pdf" class="action-button" download>
+                            <a href="/public/cv-andreanne-fournier-portfolio-09-2025.pdf" class="action-button"
+                                data-i18n="download-cv" download>
                                 Télécharger mon CV
                                 <i class="fa-solid fa-file-arrow-down"></i>
                             </a>
@@ -78,39 +80,52 @@
 
         <!-- Professional Experience -->
         <section id="experience">
-            <h2>Expérience professionnelle</h2>
+            <h2 data-i18n="nav-experience">Expérience professionnelle</h2>
             <div class="experience-grid">
                 <div class="experience-container">
-                    <div class="tab job">Emploi</div>
+                    <div class="tab job" data-i18n="tab-job">Emploi</div>
                     <div class="experience-card">
                         <div>
-                            <h3>Insoft (Infodev EDI Inc.) / Programmeuse</h3>
-                            <div class="date date-job">05-2024 à 05-2025, Québec</div>
+                            <h3 data-i18n="first-job-title">Insoft (Infodev EDI Inc.) / Programmeuse</h3>
+                            <div class="date date-job" data-i18n="first-job-date">05-2024 à 05-2025, Québec</div>
                             <ul class="custom-bullets jobs">
-                                <li>Développement d’applications Web axées sur la visualisation et l’intégration de
-                                    données en utilisant React, Next.JS, TypeScript et Tailwind CSS.</li>
-                                <li>Récupération, transformation et affichage de données dynamiques issues d’un API
-                                    relié à une base de données.</li>
-                                <li>Intégration de bibliothèques JavaScript (D3, Plotly, Leaflet, DataTables) pour la
-                                    visualisation de données.</li>
-                                <li>Conception de nouvelles fonctionnalités en tenant compte de la performance, de la
-                                    maintenabilité et de l’expérience utilisateur.</li>
+                                <li data-i18n="first-job-task-1">Développement d’applications Web axées sur la
+                                    visualisation et l’intégration de données en utilisant React, Next.JS, TypeScript et Tailwind CSS.
+                                </li>
+                                <li data-i18n="first-job-task-2">Récupération, transformation et affichage de données
+                                    dynamiques issues d’un API
+                                    relié à une base de données.
+                                </li>
+                                <li data-i18n="first-job-task-3">Intégration de bibliothèques JavaScript (D3, Plotly,
+                                    Leaflet, DataTables) pour la visualisation de données.
+                                </li>
+                                <li data-i18n="first-job-task-4">Conception de nouvelles fonctionnalités en tenant
+                                    compte de la performance, de la maintenabilité et de l’expérience utilisateur.
+                                </li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div>
-                    <div class="tab internship">Stage</div>
+                    <div class="tab internship" data-i18n="tab-internship">Stage</div>
                     <div class="experience-card">
                         <div>
-                            <h3>Infodev EDI Inc. / Programmeuse</h3>
-                            <div class="date date-internship">03-2024 à 05-2024, Québec</div>
+                            <h3 data-i18n="internship-title">Infodev EDI Inc. / Programmeuse</h3>
+                            <div class="date date-internship" data-i18n="internship-date">03-2024 à 05-2024, Québec
+                            </div>
                             <ul class="custom-bullets internships">
-                                <li>Apprentissage et pratique des langages C et J (<a
-                                        href="https://www.jsoftware.com/#/" target="_blank"
-                                        class="j-link">https://www.jsoftware.com/#/</a>).</li>
-                                <li>Installation et configuration d’un serveur Apache 2.4 avec scripts CGI en J.</li>
-                                <li>Génération de code (HTML, CSS, JS) et communication avec SQLite en J.</li>
+                                <li>
+                                    <span data-i18n="internship-task-1">
+                                        Apprentissage et pratique des langages C et J
+                                    </span> (<a href="https://www.jsoftware.com/#/" target="_blank"
+                                        class="j-link">https://www.jsoftware.com/#/</a>).
+                                </li>
+                                <li data-i18n="internship-task-2">Installation et configuration d’un serveur Apache 2.4
+                                    avec scripts CGI en J.
+                                </li>
+                                <li data-i18n="internship-task-3">Génération de code (HTML, CSS, JS) et communication
+                                    avec SQLite en J.
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -121,25 +136,25 @@
         <div class="education-skills-grid">
             <!-- Education -->
             <section id="education">
-                <h2>Éducation</h2>
+                <h2 data-i18n="nav-education">Éducation</h2>
                 <div class="education-container">
                     <div class="timeline">
                         <div class="education-card-container">
                             <div class="education-card left">
                                 <div class="content">
-                                    <h3>AEC Programmation</h3>
-                                    <p>Collège Multihexa</p>
-                                    <p>Mars 2024,</p>
-                                    <p>Chicoutimi (à distance)</p>
+                                    <h3 data-i18n="education-card-1-title">AEC Programmation</h3>
+                                    <p data-i18n="education-card-1-school">Collège Multihexa</p>
+                                    <p data-i18n="education-card-1-date">Mars 2024,</p>
+                                    <p data-i18n="education-card-1-location">Chicoutimi (à distance)</p>
                                 </div>
                             </div>
                         </div>
                         <div class="education-card-container">
                             <div class="education-card left">
                                 <div class="content">
-                                    <h3>Baccalauréat en études littéraires</h3>
-                                    <p>Université Laval</p>
-                                    <p>Avril 2018, Québec</p>
+                                    <h3 data-i18n="education-card-2-title">Baccalauréat en études littéraires</h3>
+                                    <p data-i18n="education-card-2-school">Université Laval</p>
+                                    <p data-i18n="education-card-2-date-location">Avril 2018, Québec</p>
                                 </div>
                             </div>
                         </div>
@@ -149,7 +164,7 @@
 
             <!-- Skills -->
             <section id="skills">
-                <h2>Compétences techniques</h2>
+                <h2 data-i18n="nav-skills">Compétences techniques</h2>
                 <div class="skill-container">
                     <button class="accordion">
                         <div class="accordion-left">
@@ -164,19 +179,19 @@
                                 src="https://img.icons8.com/?size=100&id=SB6eApJMkq1S&format=png&color=000000"
                                 alt="logo-react">
                             <h4>React</h4>
-                            <p>Intermédiaire</p>
+                            <p data-i18n="skill-card-level-2">Intermédiaire</p>
                         </div>
                         <div class="skill-card" id="next">
                             <img class="skill-icon" src="public/nextjs-icon-svgrepo-com.svg" alt="logo-next">
                             <h4>Next.JS</h4>
-                            <p>Intermédiaire</p>
+                            <p data-i18n="skill-card-level-2">Intermédiaire</p>
                         </div>
                     </div>
 
                     <button class="accordion">
                         <div class="accordion-left">
                             <i class="fa-solid fa-code h3-icon"></i>
-                            <h3> Langages</h3>
+                            <h3 data-i18n="skill-category-title-2"> Langages</h3>
                         </div>
                         <i class="fa-solid fa-chevron-down"></i>
                     </button>
@@ -185,32 +200,32 @@
                             <img class="skill-icon"
                                 src="https://img.icons8.com/?size=100&id=39854&format=png&color=000000" alt="logo-js">
                             <h4>JavaScript</h4>
-                            <p>Intermédiaire</p>
+                            <p data-i18n="skill-card-level-2">Intermédiaire</p>
                         </div>
                         <div class="skill-card" id="ts">
                             <img class="skill-icon"
                                 src="https://img.icons8.com/?size=100&id=cHBUT9SmrD2V&format=png&color=000000"
                                 alt="logo-ts">
                             <h4>TypeScript</h4>
-                            <p>Intermédiaire</p>
+                            <p data-i18n="skill-card-level-2">Intermédiaire</p>
                         </div>
                         <div class="skill-card" id="html5">
                             <img class="skill-icon"
                                 src="https://img.icons8.com/?size=100&id=23028&format=png&color=000000"
                                 alt="logo-html5">
                             <h4>HTML5</h4>
-                            <p>Avancé</p>
+                            <p data-i18n="skill-card-level-3">Avancé</p>
                         </div>
                         <div class="skill-card" id="css3">
                             <img class="skill-icon"
                                 src="https://img.icons8.com/?size=100&id=38272&format=png&color=000000" alt="logo-css3">
                             <h4>CSS3</h4>
-                            <p>Avancé</p>
+                            <p data-i18n="skill-card-level-3">Avancé</p>
                         </div>
                         <div class="skill-card" id="sql">
                             <img class="skill-icon" src="public/sql-database-generic-svgrepo-com.svg" alt="logo-sql">
                             <h4>SQL</h4>
-                            <p>Intermédiaire</p>
+                            <p data-i18n="skill-card-level-2">Intermédiaire</p>
                         </div>
                     </div>
 
@@ -227,20 +242,20 @@
                                 src="https://img.icons8.com/?size=100&id=UpSCHTwpywad&format=png&color=000000"
                                 alt="logo-tailwind" />
                             <h4>Tailwind CSS</h4>
-                            <p>Avancé</p>
+                            <p data-i18n="skill-card-level-3">Avancé</p>
                         </div>
                         <div class="skill-card" id="canva">
                             <img class="skill-icon"
                                 src="https://img.icons8.com/?size=100&id=MSSIu6fxvJKT&format=png&color=000000" />
                             <h4>Canva</h4>
-                            <p>Intermédiaire</p>
+                            <p data-i18n="skill-card-level-2">Intermédiaire</p>
                         </div>
                     </div>
 
                     <button class="accordion">
                         <div class="accordion-left">
                             <i class="fa-solid fa-toolbox h3-icon"></i>
-                            <h3> Outils</h3>
+                            <h3 data-i18n="skill-category-title-4"> Outils</h3>
                         </div>
                         <i class="fa-solid fa-chevron-down"></i>
                     </button>
@@ -249,12 +264,12 @@
                             <img class="skill-icon"
                                 src="https://img.icons8.com/?size=100&id=38389&format=png&color=000000" alt="logo-git">
                             <h4>Git</h4>
-                            <p>Avancé</p>
+                            <p data-i18n="skill-card-level-3">Avancé</p>
                         </div>
                         <div class="skill-card" id="svn">
                             <img class="skill-icon" src="public/subversion-svgrepo-com.svg" alt="logo-svn">
                             <h4>SVN</h4>
-                            <p>Intermédiaire</p>
+                            <p data-i18n="skill-card-level-2">Intermédiaire</p>
                         </div>
                     </div>
                 </div>
@@ -263,11 +278,11 @@
 
         <!-- Projects -->
         <section id="projects">
-            <h2>Projets personnels</h2>
+            <h2 data-i18n="project-section-title">Projets personnels</h2>
             <div class="cards-grid">
                 <div class="project-card">
                     <div>
-                        <p>September 2025</p>
+                        <p data-i18n="project-date-1">Septembre 2025</p>
                         <h4>Portfolio</h4>
                         <div class="tech-list">
                             <div class="card-button-secondary">
@@ -280,14 +295,15 @@
                                 <p>JavaScript</p>
                             </div>
                         </div>
-                        <p class="p-project">
-                            Une page web présentant mon expérience professionnelle, mes compétences et mes projets.                            
+                        <p class="p-project" data-i18n="portfolio-description">
+                            Une page web présentant mon expérience professionnelle, mes compétences et mes projets.
                         </p>
                         <div class="project-links">
                             <a title="Démo" target="_blank" href="https://andreannefournier.netlify.app">
                                 <i class="fa-solid fa-arrow-up-right-from-square link-icon"></i>
                             </a>
-                            <a title="GitHub" target="_blank" href="https://github.com/FournierAnd/portfolio-andreanne-2025"><i
+                            <a title="GitHub" target="_blank"
+                                href="https://github.com/FournierAnd/portfolio-andreanne-2025"><i
                                     class="fa-brands fa-github link-icon"></i></a>
                         </div>
                     </div>
@@ -297,7 +313,7 @@
                 </div>
                 <div class="project-card">
                     <div>
-                        <p>September 2025</p>
+                        <p data-i18n="project-date-1">Septembre 2025</p>
                         <h4>Fun Todo</h4>
                         <div class="tech-list">
                             <div class="card-button-secondary">
@@ -313,7 +329,7 @@
                                 <p>Tailwind CSS</p>
                             </div>
                         </div>
-                        <p class="p-project">
+                        <p class="p-project" data-i18n="funtodo-description">
                             Une application React ludique et interactive pour gérer vos tâches.
                             Organisez vos tâches, marquez-les comme terminées et profitez d'une expérience fluide et
                             animée.
@@ -332,7 +348,7 @@
                 </div>
                 <div class="project-card">
                     <div>
-                        <p>Août 2025</p>
+                        <p data-i18n="project-date-2">Août 2025</p>
                         <h4>Hooks & Stitches</h4>
                         <div class="tech-list">
                             <div class="card-button-secondary">
@@ -348,7 +364,7 @@
                                 <p>CSS</p>
                             </div>
                         </div>
-                        <p class="p-project">
+                        <p class="p-project" data-i18n="hooksandstitches-description">
                             Une application React interactive qui enseigne les bases du crochet.
                             Apprenez un nouveau point par jour grâce à des patrons écrits, des diagrammes de points et
                             des vidéos.
@@ -371,7 +387,10 @@
         </section>
     </main>
     <footer>
-        <span>© <span id="year"></span> Andréanne Fournier | Tous droits réservés</span>
+        <span>
+            © <span id="year"></span> Andréanne Fournier |
+            <span data-i18n="footer">Tous droits réservés</span>
+        </span>
     </footer>
 </body>
 

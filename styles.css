@@ -167,6 +167,10 @@ nav {
     color: var(--background-highlight);
 }
 
+.lang-btn {
+    font-weight: 600;
+}
+
 /*HERO*/
 
 .hero-grid {

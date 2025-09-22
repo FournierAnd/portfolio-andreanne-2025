@@ -1,48 +1,73 @@
-//Theme toggle
+// Language toggle
+let currentLang = "fr";
+let translations = {};
+
+async function loadLanguage(lang) {
+    const response = await fetch(`public/locales/${lang}.json`);
+    translations = await response.json();
+
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        if (translations[key]) {
+            el.innerText = translations[key];
+        }
+    });
+}
+
+function switchLanguage() {
+    currentLang = currentLang === "fr" ? "en" : "fr";
+    loadLanguage(currentLang);
+    document.querySelector(".lang-btn").innerText = currentLang === "fr" ? "EN" : "FR";
+}
+
+// Load default language on page load
+loadLanguage(currentLang);
+
+// Theme toggle
 const button = document.getElementById("theme-toggle");
 
 button.addEventListener("click", () => {
     document.documentElement.classList.toggle("dark");
 });
 
-//Nav bar
+// Nav bar
 const sidenav = document.getElementById("mySidenav");
 const hamburger = document.getElementById("hamburger");
 const navLinks = sidenav.querySelectorAll("a");
 
 // Toggle sidebar open/close when clicking hamburger
 function openCloseNav() {
-  const isOpen = sidenav.style.width === "250px";
+    const isOpen = sidenav.style.width === "250px";
 
-  if (isOpen) {
-    sidenav.style.width = "0";
-    hamburger.classList.remove("active"); // remove "active" style
-  } else {
-    sidenav.style.width = "250px";
-    hamburger.classList.add("active"); // keep icon highlighted
-  }
+    if (isOpen) {
+        sidenav.style.width = "0";
+        hamburger.classList.remove("active"); // remove "active" style
+    } else {
+        sidenav.style.width = "250px";
+        hamburger.classList.add("active"); // keep icon highlighted
+    }
 }
 
 // Close sidebar when a link is clicked
 navLinks.forEach(link => {
-  link.addEventListener("click", () => {
-    sidenav.style.width = "0";
-    hamburger.classList.remove("active");
-  });
+    link.addEventListener("click", () => {
+        sidenav.style.width = "0";
+        hamburger.classList.remove("active");
+    });
 });
 
-//Opening and closing accordions
+// Opening and closing accordions
 let acc = document.getElementsByClassName("accordion");
 
 for (let i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function () {
-    this.classList.toggle("active"); // toggle margin change
-    let panel = this.nextElementSibling;
-    panel.classList.toggle("open"); // toggle flex display
-  });
+    acc[i].addEventListener("click", function () {
+        this.classList.toggle("active"); // toggle margin change
+        let panel = this.nextElementSibling;
+        panel.classList.toggle("open"); // toggle flex display
+    });
 }
 
-//Date
+// Date
 document.addEventListener("DOMContentLoaded", () => {
     const yearSpan = document.getElementById("year");
     yearSpan.textContent = new Date().getFullYear();
